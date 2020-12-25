@@ -40,7 +40,8 @@ const cubeCalc = (params) => {
 
   // console.log(cube)
 
-  return { geometry: {...geometry}, material: {...material} }
+  // return { geometry: {...geometry}, material: {...material} }
+  return inputCubeParams
 };
 
 //  ROUTES =====================================

@@ -44,7 +44,7 @@ class App extends React.Component {
     }
   }
 
-  buildCube = (incomeCube) => {
+  buildCube = (incomeCubeParams) => {
     this.setState({ key: Math.random() })
 
     const sceneElement = document.getElementById('canvas')
@@ -57,15 +57,13 @@ class App extends React.Component {
     renderer.setSize(sceneElement.offsetWidth, sceneElement.offsetHeight)
     sceneElement.appendChild(renderer.domElement)
 
-    const geometry = new THREE.BoxGeometry(2, 1, 1, 1, 1, 1)
+    const geometry = new THREE.BoxGeometry(incomeCubeParams)
     const material = new THREE.MeshBasicMaterial({ color: '#1675d1' })
     const cube = new THREE.Mesh(geometry, material)
 
     // const geometry = new THREE.BoxGeometry( incomeCube.geometry );
     // const material = new THREE.MeshBasicMaterial( {...incomeCube.material, color: '#1675d1' } );
     // const cube = new THREE.Mesh( geometry, material );
-
-    console.log(cube)
 
     scene.add(cube)
     camera.position.z = 5
